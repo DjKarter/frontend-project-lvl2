@@ -1,22 +1,68 @@
 {
-  "name": "@hexlet/code",
-  "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/DjKarter/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/DjKarter/frontend-project-lvl2/actions)",
-  "main": "bin/gendiff.js",
+  "name": "calc-diff",
+  "version": "0.8.1",
+  "description": "Compares two configuration files and shows a difference",
+  "main": "dist/index.js",
+  "bin": {
+    "gendiff": "dist/bin/gendiff.js"
+  },
+  "engines": {
+    "node": "9"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "watch": "jest --watch",
+    "babel-node": "babel-node",
+    "eslint": "eslint",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/__tests__/__fixtures__/"
+    ],
+    "verbose": true,
+    "coverageReporters": [
+      "lcov"
+    ],
+    "collectCoverage": true
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DjKarter/frontend-project-lvl2.git"
+    "url": "git+https://github.com/Yorickov/calc-diff.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DjKarter/frontend-project-lvl2/issues"
+    "url": "https://github.com/Yorickov/calc-diff/issues"
   },
-  "homepage": "https://github.com/DjKarter/frontend-project-lvl2#readme",
+  "keywords": [],
+  "author": "Yorickov",
+  "license": "ISC",
+  "homepage": "https://github.com/Yorickov/calc-diff#readme",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "babel-jest": "*",
+    "babel-plugin-transform-runtime": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jest": "*",
+    "jest": "*",
+    "jest-cli": "*",
+    "regenerator-runtime": "*"
+  },
   "dependencies": {
-    "commander": "^8.1.0"
+    "commander": "^2.14.1",
+    "ini": "^1.3.5",
+    "js-yaml": "^3.10.0",
+    "lodash": "^4.17.5"
   }
 }
