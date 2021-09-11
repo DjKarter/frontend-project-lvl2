@@ -1,5 +1,5 @@
 {
-  "name": "calc-diff",
+  "name": "@hexlet/code",
   "version": "0.8.1",
   "description": "Compares two configuration files and shows a difference",
   "main": "dist/index.js",
